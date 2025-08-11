@@ -33,8 +33,31 @@
       line-height: 1.8em;
       margin-bottom: 30px;
     }
-  </style>
+    #moreContent {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      color: #333;
+    }
+
+    .learn-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .learn-btn:hover {
+      background-color: red;
+    }
+  </style>  
 </head>
+
 <body>
   <section class="about">
     <div style="display: flex; justify-content: center;">
@@ -42,11 +65,34 @@
     </div>
     <h1>About Me</h1>
     <p>
-      My name is Jeremy Kachisikwu Esotu, a proud 13-year-old born on the 14th of April, 2012 in Sugarland, Houston, Texas, USA. I am the first child of Mr. and Mrs. Esotu, and the eldest brother to Jayden Tonna and Emmanuel Kauchechukwume Esotu. Family means everything to me—I’m surrounded by the love and support of my uncles, aunties, and cousins on both my paternal and maternal sides. Each relationship is a thread in the fabric of who I’m becoming.
+      My name is Jeremy Kachisikwu Esotu, a proud 13-year-old born on the 14th of April, 2012 in Sugarland, Houston, Texas, USA...
     </p>
     <p>
-      I am a happy Nigerian-American with dual citizenship, currently living in the western part of Nigeria. As a Nigerian Christian, I speak the vibrant Igbo language and am learning Yoruba and Hausa—a journey that connects me even deeper to my roots. My father taught me that our State of Origin is Anambara—known among Igbos by its indigenous name, just like Enugwu for Enugu State. I dream of making a name for myself through Codingal, the incredible teaching company that’s shaping young minds like mine. Torn between my love for science and art, I find both worlds too fascinating to let go of either. I believe I’m destined to become someone great—a superstar on TV, an innovator beyond just being an artist or a developer. I stand firmly for good over evil and peace over war, and I strive to live in a way that reflects those values every day.
+      I am a happy Nigerian-American with dual citizenship, currently living in the western part of Nigeria...
     </p>
+
+    <button class="learn-btn" onclick="showMore()">Learn More</button>
+
+    <div id="moreContent">
+      <p>
+        I love coding, especially with HTML, CSS, and JavaScript. I enjoy building websites that tell stories and inspire people. I also love drawing, writing, and exploring new ideas. My dream is to create something that changes the world—whether it’s through technology, art, or kindness. I believe that every person has a purpose, and mine is to shine light wherever I go.
+      </p>
+    </div>
   </section>
+
+  <script>
+    function showMore() {
+      const content = document.getElementById("moreContent");
+      const button = document.querySelector(".learn-btn");
+
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        button.textContent = "Show Less";
+      } else {
+        content.style.display = "none";
+        button.textContent = "Learn More";
+      }
+    }
+  </script>
 </body>
 </html>
